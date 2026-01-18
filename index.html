@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aplicación web para gestionar y organizar tus tareas diarias"
+    />
+    <title>Gestor de Tareas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header role="banner">
+      <h1>📝 Gestor de Tareas</h1>
+    </header>
+
+    <main role="main">
+      <!-- Agregar nueva tarea -->
+      <section aria-labelledby="titulo-nueva-tarea">
+        <h2 id="titulo-nueva-tarea" class="visually-hidden">
+          Agregar nueva tarea
+        </h2>
+
+        <div class="input-container">
+          <label for="input-tarea" class="visually-hidden"
+            >Descripción de la tarea</label
+          >
+          <input
+            type="text"
+            id="input-tarea"
+            placeholder="Escribe una nueva tarea (máx. 200 caracteres)..."
+            aria-required="true"
+            autocomplete="off"
+            maxlength="200"
+          />
+          <button
+            type="button"
+            id="btn-agregar"
+            aria-label="Agregar nueva tarea"
+          >
+            Agregar
+          </button>
+        </div>
+      </section>
+
+      <!-- Filtros -->
+      <nav aria-label="Filtros de tareas">
+        <h2 class="visually-hidden">Filtrar tareas por estado</h2>
+
+        <div class="filtros" role="group">
+          <button
+            class="btn-filtro activo"
+            data-filtro="todas"
+            aria-pressed="true"
+          >
+            Todas
+          </button>
+          <button
+            class="btn-filtro"
+            data-filtro="pendientes"
+            aria-pressed="false"
+          >
+            Pendientes
+          </button>
+          <button
+            class="btn-filtro"
+            data-filtro="completadas"
+            aria-pressed="false"
+          >
+            Completadas
+          </button>
+        </div>
+      </nav>
+
+      <!-- Lista de tareas -->
+      <section aria-labelledby="titulo-lista">
+        <h2 id="titulo-lista" class="visually-hidden">Tus tareas</h2>
+
+        <ul
+          id="lista-tareas"
+          role="list"
+          aria-live="polite"
+          aria-atomic="false"
+        >
+          <!-- Tareas dinámicas -->
+        </ul>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>
+        <small
+          >&copy; 2026 Gestor de Tareas | Desarrollado por
+          <a href="https:https://github.com/galvaradosd"
+            >Germán Alvarado</a
+          ></small
+        >
+      </p>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>
